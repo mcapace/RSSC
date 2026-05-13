@@ -30,7 +30,13 @@ export default function Audience03() {
           />
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.45 }}
+        >
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -44,7 +50,7 @@ export default function Audience03() {
               <p className="m-0 mt-2 font-display text-2xl italic text-gold md:text-3xl">{s.value}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
           className="mt-12 space-y-6 border-t border-gold/25 pt-10"

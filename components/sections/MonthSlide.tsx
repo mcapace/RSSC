@@ -30,6 +30,8 @@ const blobPosition: Record<MonthSlideProps["visualType"], string> = {
   yearEnd: "radial-gradient(circle at 70% 70%, rgba(201,169,97,0.15), transparent 55%)",
 };
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export function MonthSlide({
   month,
   year,
@@ -49,10 +51,12 @@ export function MonthSlide({
 
   return (
     <SectionFrame index={sectionIndex} id={id} ariaLabel={ariaLabel} className="relative overflow-x-hidden bg-bg">
-      <div
+      <motion.div
         className="pointer-events-none absolute inset-0 blur-[200px]"
         style={{ background: blobPosition[visualType] }}
         aria-hidden
+        animate={reduce ? undefined : { opacity: [0.55, 0.85, 0.6] }}
+        transition={reduce ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative mx-auto grid min-h-0 w-full max-w-6xl items-start gap-10 px-6 py-12 md:grid-cols-[auto_1fr] md:px-12 md:py-16">
@@ -92,7 +96,7 @@ export function MonthSlide({
             initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, amount: 0.45 }}
-            transition={{ duration: 1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1, delay: 0.7, ease }}
             style={{ transformOrigin: "left center" }}
           />
 
@@ -103,7 +107,7 @@ export function MonthSlide({
                 initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.45 }}
-                transition={{ delay: 0.9 + i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.9 + i * 0.1, duration: 0.55, ease }}
                 className="border border-gold/35 px-4 py-3"
               >
                 <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ivory/60">
@@ -115,11 +119,29 @@ export function MonthSlide({
           </div>
 
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            <p className="m-0 max-w-[min(52ch,100%)] flex-1 break-words font-body text-base leading-relaxed text-ivory/80">
+            <motion.p
+              className="m-0 max-w-[min(52ch,100%)] flex-1 break-words font-body text-base leading-relaxed text-ivory/80"
+              initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.6, delay: 0.15, ease }}
+            >
               {description}
-            </p>
-            <div className="relative w-full max-w-[320px] shrink-0 overflow-hidden rounded-sm border border-gold/35 bg-surface/60">
-              <div className="relative h-44 w-full">
+            </motion.p>
+            <motion.div
+              className="relative w-full max-w-[320px] shrink-0 overflow-hidden rounded-sm border border-gold/35 bg-surface/60"
+              initial={reduce ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.65, delay: 0.25, ease }}
+            >
+              <motion.div
+                className="relative h-44 w-full"
+                initial={reduce ? { scale: 1 } : { scale: 1.06 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 1.1, delay: 0.2, ease }}
+              >
                 <Image
                   src="https://images.unsplash.com/photo-1526481280695-3c687fd543c8?auto=format&fit=crop&w=900&q=70"
                   alt=""
@@ -127,11 +149,11 @@ export function MonthSlide({
                   className="object-cover opacity-40"
                   sizes="320px"
                 />
-              </div>
+              </motion.div>
               <p className="m-0 px-4 py-3 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-ivory/55">
                 {asideCaption ?? `Sneak peek panel · ${year}`}
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

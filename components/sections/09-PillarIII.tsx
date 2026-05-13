@@ -26,8 +26,14 @@ export default function PillarIII09() {
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={8} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+    <SectionFrame index={8} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
+      <motion.div
+        className="pointer-events-none absolute bottom-24 left-1/4 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/8 blur-[96px]"
+        aria-hidden
+        animate={reduce ? undefined : { opacity: [0.25, 0.42, 0.3], scale: [1, 1.08, 1] }}
+        transition={reduce ? undefined : { duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
         <SectionLabel lines={["— PILLAR III"]} />
         <div className="mt-6">
           <SplitTitle
@@ -59,7 +65,7 @@ export default function PillarIII09() {
               initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ delay: 0.07 * i, duration: 0.5 }}
+              transition={{ delay: 0.07 * i, duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
               className="rounded-sm border border-gold/30 bg-surface/25 px-4 py-5"
             >
               <p className="m-0 font-display text-lg italic text-ivory md:text-xl">{ph.title}</p>
@@ -68,7 +74,15 @@ export default function PillarIII09() {
           ))}
         </div>
 
-        <p className="mt-10 m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold/90">13 social units · 5 weeks of post-voyage.</p>
+        <motion.p
+          className="mt-10 m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold/90"
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
+        >
+          13 social units · 5 weeks of post-voyage.
+        </motion.p>
       </div>
     </SectionFrame>
   );

@@ -24,6 +24,8 @@ const lines = [
   "15 · Dec — WA Top 20 Whiskies — 250K",
 ];
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function PlanInventory05() {
   const meta = SECTIONS[4];
   const reduce = useReducedMotion();
@@ -41,16 +43,25 @@ export default function PlanInventory05() {
           />
         </div>
 
-        <div className="mt-10 max-h-[min(52vh,520px)] overflow-y-auto rounded-sm border border-gold/25 bg-surface/30 pr-2">
-          <ul className="m-0 list-none space-y-0 p-0">
+        <div className="relative mt-10 max-h-[min(52vh,520px)] overflow-y-auto rounded-sm border border-gold/25 bg-surface/30 pr-2 pl-1">
+          <motion.div
+            className="pointer-events-none absolute bottom-3 left-2 top-3 w-px bg-gradient-to-b from-gold/50 via-gold/20 to-gold/40"
+            aria-hidden
+            initial={reduce ? { scaleY: 1 } : { scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.85, ease }}
+            style={{ transformOrigin: "top center" }}
+          />
+          <ul className="relative z-[1] m-0 list-none space-y-0 p-0">
             {lines.map((line, i) => (
               <motion.li
                 key={line}
-                initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ delay: 0.02 * i, duration: 0.25 }}
-                className="border-b border-gold/10 px-4 py-3 font-mono text-[0.62rem] uppercase leading-snug tracking-[0.06em] text-ivory/80 md:text-[0.68rem]"
+                initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -10, y: 6 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.08 }}
+                transition={{ delay: 0.025 * Math.min(i, 8), duration: 0.38, ease }}
+                className="border-b border-gold/10 px-4 py-3 pl-6 font-mono text-[0.62rem] uppercase leading-snug tracking-[0.06em] text-ivory/80 md:text-[0.68rem]"
               >
                 {line}
               </motion.li>
@@ -60,10 +71,10 @@ export default function PlanInventory05() {
 
         <motion.p
           className="mt-8 m-0 font-display text-xl italic text-gold md:text-2xl"
-          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.55, ease }}
         >
           — Total — 3.34M impressions
         </motion.p>

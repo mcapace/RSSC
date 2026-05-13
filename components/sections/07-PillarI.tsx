@@ -26,8 +26,14 @@ export default function PillarI07() {
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={6} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+    <SectionFrame index={6} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
+      <motion.div
+        className="pointer-events-none absolute -right-10 top-24 h-72 w-72 rounded-full bg-gold/12 blur-[88px]"
+        aria-hidden
+        animate={reduce ? undefined : { opacity: [0.3, 0.5, 0.34], rotate: [0, 6, 0] }}
+        transition={reduce ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
         <SectionLabel lines={["— PILLAR I"]} />
         <div className="mt-6">
           <SplitTitle
@@ -55,7 +61,7 @@ export default function PillarI07() {
               initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ delay: 0.06 * i, duration: 0.5 }}
+              transition={{ delay: 0.06 * i, duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
               className="border-l-2 border-gold/35 pl-5"
             >
               <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-gold">{p.k}</p>
@@ -76,7 +82,15 @@ export default function PillarI07() {
           </p>
         </motion.div>
 
-        <p className="mt-8 m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold/90">Always-On · Hub residency.</p>
+        <motion.p
+          className="mt-8 m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold/90"
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Always-On · Hub residency.
+        </motion.p>
       </div>
     </SectionFrame>
   );

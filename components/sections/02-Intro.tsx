@@ -21,6 +21,8 @@ const blocks = [
   },
 ];
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function Intro02() {
   const meta = SECTIONS[1];
   const reduce = useReducedMotion();
@@ -38,10 +40,20 @@ export default function Intro02() {
           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease }}
         >
           Carry Regent&apos;s story into the homes of America&apos;s most discerning food &amp; drink readers.
         </motion.p>
+
+        <motion.div
+          className="mt-6 h-px max-w-lg bg-gradient-to-r from-gold/70 via-gold/25 to-transparent"
+          aria-hidden
+          initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.9, delay: 0.08, ease }}
+          style={{ transformOrigin: "left center" }}
+        />
 
         <div className="mt-12 space-y-10">
           {blocks.map((b, i) => (
@@ -50,7 +62,7 @@ export default function Intro02() {
               initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -12 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.35 }}
-              transition={{ delay: 0.08 * i, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.08 * i, duration: 0.55, ease }}
               className="border-l border-gold/40 pl-6"
             >
               <p className="m-0 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-gold">{b.k}</p>

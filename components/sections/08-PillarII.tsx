@@ -26,8 +26,14 @@ export default function PillarII08() {
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={7} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+    <SectionFrame index={7} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
+      <motion.div
+        className="pointer-events-none absolute -left-16 top-1/3 h-64 w-64 rounded-full bg-gold/10 blur-[80px]"
+        aria-hidden
+        animate={reduce ? undefined : { opacity: [0.28, 0.48, 0.32], y: [0, 14, 0] }}
+        transition={reduce ? undefined : { duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
         <SectionLabel lines={["— PILLAR II"]} />
         <div className="mt-6">
           <SplitTitle
@@ -55,7 +61,7 @@ export default function PillarII08() {
               initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ delay: 0.07 * i, duration: 0.5 }}
+              transition={{ delay: 0.07 * i, duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
               className="border-b border-gold/20 pb-8 last:border-0"
             >
               <p className="m-0 font-display text-xl italic text-ivory md:text-2xl">{c.title}</p>
@@ -64,7 +70,15 @@ export default function PillarII08() {
           ))}
         </div>
 
-        <p className="mt-10 m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold/90">Long-form · Expert voices · Hub residency.</p>
+        <motion.p
+          className="mt-10 m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold/90"
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Long-form · Expert voices · Hub residency.
+        </motion.p>
       </div>
     </SectionFrame>
   );

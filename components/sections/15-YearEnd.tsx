@@ -6,16 +6,20 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SplitTitle } from "@/components/ui/SplitTitle";
 import { SECTIONS } from "@/lib/sections";
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function YearEnd15() {
   const meta = SECTIONS[14];
   const reduce = useReducedMotion();
 
   return (
     <SectionFrame index={14} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
-      <div
+      <motion.div
         className="pointer-events-none absolute inset-0 blur-[200px]"
         style={{ background: "radial-gradient(circle at 70% 70%, rgba(201,169,97,0.15), transparent 55%)" }}
         aria-hidden
+        animate={reduce ? undefined : { opacity: [0.55, 0.88, 0.62] }}
+        transition={reduce ? undefined : { duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative mx-auto max-w-6xl px-6 py-12 md:px-12 md:py-16">
@@ -29,13 +33,23 @@ export default function YearEnd15() {
           />
         </div>
 
+        <motion.div
+          className="mt-8 h-px max-w-lg bg-gradient-to-r from-gold/70 via-gold/25 to-transparent"
+          aria-hidden
+          initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.9, delay: 0.05, ease }}
+          style={{ transformOrigin: "left center" }}
+        />
+
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <motion.article
             className="rounded-sm border border-gold/35 bg-surface/30 p-6"
-            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={reduce ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 14, x: -22 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.55, ease }}
           >
             <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold">WS Top 100 Wines — November</p>
             <p className="m-0 mt-2 font-body text-sm text-ivory/70 md:text-base">Booking Inquiries</p>
@@ -50,10 +64,10 @@ export default function YearEnd15() {
 
           <motion.article
             className="rounded-sm border border-gold/35 bg-surface/30 p-6"
-            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={reduce ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 14, x: 22 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.55, delay: 0.08 }}
+            transition={{ duration: 0.55, delay: 0.1, ease }}
           >
             <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold">WA Top 20 Whiskies — December</p>
             <p className="m-0 mt-2 font-body text-sm text-ivory/70 md:text-base">Booking Inquiries</p>

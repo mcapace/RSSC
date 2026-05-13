@@ -21,6 +21,8 @@ const tiers = [
   },
 ] as const;
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 const innovations = [
   "Live floorplan — Interactive map. Attendees navigate by booth, category, score. Stonestreet pinned on launch.",
   "Favorite & follow — Tap a brand to add to a personal tasting list. Pre-, in-, post-event — the list persists.",
@@ -49,40 +51,36 @@ export default function WhiskyFestTiers20() {
 
         <motion.p
           className="mt-6 max-w-prose font-body text-base leading-relaxed text-ivory/85"
-          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.55, ease }}
         >
           {
             "Completely revamped for 2026 to drive measurable ROI. Three attendee tiers — from the curious floor visitor to the lounge collector — plus an attendee app that turns the night into a closed-loop CRM event."
           }
         </motion.p>
 
-        <motion.div
-          className="mt-10 grid gap-3 rounded-sm border border-gold/35 bg-surface/30 px-4 py-5 font-mono text-[0.58rem] uppercase leading-relaxed tracking-[0.1em] text-ivory/75 sm:grid-cols-2 md:grid-cols-4 md:text-[0.6rem]"
-          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.45 }}
-        >
-          <p className="m-0">
-            <span className="block text-gold/90">Date</span>
-            <span className="mt-1 block font-body text-sm normal-case tracking-normal text-ivory/90">November 20, 2026</span>
-          </p>
-          <p className="m-0">
-            <span className="block text-gold/90">Venue</span>
-            <span className="mt-1 block font-body text-sm normal-case tracking-normal text-ivory/90">Marriott Marquis NYC</span>
-          </p>
-          <p className="m-0">
-            <span className="block text-gold/90">Brand Sponsorship</span>
-            <span className="mt-1 block font-body text-sm normal-case tracking-normal text-ivory/90">$15,000 · turnkey</span>
-          </p>
-          <p className="m-0 sm:col-span-2 md:col-span-1">
-            <span className="block text-gold/90">Included</span>
-            <span className="mt-1 block font-body text-sm normal-case tracking-normal text-ivory/90">Booth · signage · graphics · collateral</span>
-          </p>
-        </motion.div>
+        <div className="mt-10 grid gap-3 rounded-sm border border-gold/35 bg-surface/30 px-4 py-5 font-mono text-[0.58rem] uppercase leading-relaxed tracking-[0.1em] text-ivory/75 sm:grid-cols-2 md:grid-cols-4 md:text-[0.6rem]">
+          {[
+            { label: "Date", value: "November 20, 2026" },
+            { label: "Venue", value: "Marriott Marquis NYC" },
+            { label: "Brand Sponsorship", value: "$15,000 · turnkey" },
+            { label: "Included", value: "Booth · signage · graphics · collateral", wide: true },
+          ].map((cell, ci) => (
+            <motion.div
+              key={cell.label}
+              className={cell.wide ? "m-0 sm:col-span-2 md:col-span-1" : "m-0"}
+              initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ delay: reduce ? 0 : 0.07 * ci, duration: 0.45, ease }}
+            >
+              <span className="block text-gold/90">{cell.label}</span>
+              <span className="mt-1 block font-body text-sm normal-case tracking-normal text-ivory/90">{cell.value}</span>
+            </motion.div>
+          ))}
+        </div>
 
         <div className="mt-12">
           <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold">Attendee tiers</p>
@@ -94,8 +92,17 @@ export default function WhiskyFestTiers20() {
                 initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ delay: 0.04 * i, duration: 0.45 }}
+                transition={{ delay: 0.04 * i, duration: 0.48, ease }}
               >
+                <motion.div
+                  className="mb-2 h-0.5 max-w-[10rem] bg-gold/50"
+                  aria-hidden
+                  initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{ delay: 0.04 * i + 0.08, duration: 0.6, ease }}
+                  style={{ transformOrigin: "left center" }}
+                />
                 <p className="m-0 font-mono text-[0.62rem] uppercase leading-snug tracking-[0.08em] text-ivory/70 md:text-[0.65rem]">{t.head}</p>
                 <p className="m-0 mt-3 font-body text-sm leading-relaxed text-ivory/85 md:text-base">{t.body}</p>
               </motion.div>
@@ -110,10 +117,10 @@ export default function WhiskyFestTiers20() {
               <motion.li
                 key={line.slice(0, 24)}
                 className="flex gap-3 border-b border-gold/15 pb-4 last:border-0"
-                initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.12 }}
-                transition={{ delay: 0.03 * i, duration: 0.4 }}
+                transition={{ delay: 0.04 * i, duration: 0.42, ease }}
               >
                 <span className="shrink-0 font-mono text-[0.65rem] tabular-nums text-gold">{String(i + 1).padStart(2, "0")}</span>
                 <span className="font-body text-sm leading-relaxed text-ivory/85 md:text-base">{line}</span>
@@ -124,10 +131,10 @@ export default function WhiskyFestTiers20() {
 
         <motion.div
           className="mt-12 rounded-sm border border-gold/45 bg-gold/5 px-4 py-5 md:px-6"
-          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease }}
         >
           <p className="m-0 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-gold">Closed Loop</p>
           <p className="m-0 mt-3 font-body text-sm leading-relaxed text-ivory/88 md:text-base">

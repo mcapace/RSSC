@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { SectionFrame } from "@/components/SectionFrame";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SplitTitle } from "@/components/ui/SplitTitle";
-import { SECTIONS } from "@/lib/sections";
+import { SECTIONS, TOTAL_SLIDES } from "@/lib/sections";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -96,7 +96,7 @@ export default function Cover01() {
             <SectionLabel
               lines={[
                 "H2 2026 · Digital Media Partnership · Deck Script",
-                "17 slides · Mid-June — December MMXXVI · Proposal · Confidential",
+                `${TOTAL_SLIDES} slides · Mid-June — December MMXXVI · Proposal · Confidential`,
               ]}
               className="text-gold"
             />

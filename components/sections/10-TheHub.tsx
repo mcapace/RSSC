@@ -13,25 +13,70 @@ const specs = [
   { k: "Video", v: ":60 max" },
 ];
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function TheHub10() {
   const meta = SECTIONS[9];
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={9} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="mx-auto grid min-h-0 w-full max-w-6xl items-start gap-12 px-6 py-12 md:grid-cols-[0.45fr_0.55fr] md:px-12 md:py-16">
+    <SectionFrame index={9} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
+      <motion.div
+        className="pointer-events-none absolute left-1/4 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-gold/8 blur-[90px]"
+        aria-hidden
+        animate={reduce ? undefined : { opacity: [0.35, 0.55, 0.4] }}
+        transition={reduce ? undefined : { duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <div className="relative mx-auto grid min-h-0 w-full max-w-6xl items-start gap-12 px-6 py-12 md:grid-cols-[0.45fr_0.55fr] md:px-12 md:py-16">
         <div className="space-y-6">
-          <SectionLabel lines={["— ALWAYS-ON · THE HOME · JUN 15 → DEC 31 · 6.5 MONTHS"]} />
-          <SplitTitle
-            line1="The hub at winespectator.com/regent."
-            line2="A bespoke sponsored hub that holds the three pillars in one place — Voyage Map embedded, Sponsored Series serialized, Dram Diaries archived as it airs."
-            sizeClass="text-[clamp(1.65rem,3.2vw,2.35rem)]"
-            line2ClassName="text-[clamp(1rem,1.9vw,1.35rem)] not-italic text-gold/95 md:ml-[4%]"
+          <motion.div
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: 0.5, ease }}
+          >
+            <SectionLabel lines={["— ALWAYS-ON · THE HOME · JUN 15 → DEC 31 · 6.5 MONTHS"]} />
+          </motion.div>
+          <motion.div
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55, delay: 0.08, ease }}
+          >
+            <SplitTitle
+              line1="The hub at winespectator.com/regent."
+              line2="A bespoke sponsored hub that holds the three pillars in one place — Voyage Map embedded, Sponsored Series serialized, Dram Diaries archived as it airs."
+              sizeClass="text-[clamp(1.65rem,3.2vw,2.35rem)]"
+              line2ClassName="text-[clamp(1rem,1.9vw,1.35rem)] not-italic text-gold/95 md:ml-[4%]"
+            />
+          </motion.div>
+          <motion.div
+            className="h-px max-w-md bg-gradient-to-r from-gold/60 to-transparent"
+            aria-hidden
+            initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.85, delay: 0.12, ease }}
+            style={{ transformOrigin: "left center" }}
           />
-          <p className="m-0 max-w-prose font-body text-base leading-relaxed text-ivory/82">
+          <motion.p
+            className="m-0 max-w-prose font-body text-base leading-relaxed text-ivory/82"
+            initial={reduce ? { opacity: 1 } : { opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.45, delay: 0.18, ease }}
+          >
             {"The reader's standing destination, all six-and-a-half months."}
-          </p>
-          <p className="m-0 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-ivory/55">SOP 100% · SOS 100%.</p>
+          </motion.p>
+          <motion.p
+            className="m-0 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-ivory/55"
+            initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.24, ease }}
+          >
+            SOP 100% · SOS 100%.
+          </motion.p>
         </div>
 
         <div className="relative mx-auto w-full max-w-[640px]">
@@ -43,9 +88,27 @@ export default function TheHub10() {
           >
             <div className="flex items-center gap-2 px-2 pb-3 pt-1">
               <span className="inline-flex gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-300/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
+                <motion.span
+                  className="h-2.5 w-2.5 rounded-full bg-red-400/70"
+                  aria-hidden
+                  initial={reduce ? { scale: 1 } : { scale: 0 }}
+                  animate={reduce ? { scale: 1 } : { scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 22, delay: 0.05 }}
+                />
+                <motion.span
+                  className="h-2.5 w-2.5 rounded-full bg-amber-300/70"
+                  aria-hidden
+                  initial={reduce ? { scale: 1 } : { scale: 0 }}
+                  animate={reduce ? { scale: 1 } : { scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 22, delay: 0.12 }}
+                />
+                <motion.span
+                  className="h-2.5 w-2.5 rounded-full bg-emerald-400/70"
+                  aria-hidden
+                  initial={reduce ? { scale: 1 } : { scale: 0 }}
+                  animate={reduce ? { scale: 1 } : { scale: 1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 22, delay: 0.19 }}
+                />
               </span>
               <div className="ml-3 flex-1 rounded-sm border border-gold/25 bg-bg/80 px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-ivory/65">
                 winespectator.com/regent
@@ -81,11 +144,18 @@ export default function TheHub10() {
           </motion.div>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {specs.map((s) => (
-              <div key={s.k} className="border border-gold/30 px-3 py-3">
+            {specs.map((s, si) => (
+              <motion.div
+                key={s.k}
+                className="border border-gold/30 px-3 py-3"
+                initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ delay: reduce ? 0 : 0.07 * si, duration: 0.45, ease }}
+              >
                 <p className="m-0 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-ivory/55">{s.k}</p>
                 <p className="m-0 mt-1 font-display text-lg italic text-gold">{s.v}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
