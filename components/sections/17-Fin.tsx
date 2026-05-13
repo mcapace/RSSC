@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionFrame } from "@/components/SectionFrame";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { SplitTitle } from "@/components/ui/SplitTitle";
 import { SECTIONS } from "@/lib/sections";
 
 function ShipMini() {
@@ -28,7 +29,6 @@ export default function Fin17() {
         transition={{ duration: 4, ease: [0.22, 1, 0.36, 1] }}
         style={{ willChange: "transform" }}
       >
-        {/* Replace placeholder with approved Regent sunset photography */}
         <Image
           src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80"
           alt=""
@@ -46,26 +46,46 @@ export default function Fin17() {
         />
       </motion.div>
 
-      <div className="relative z-[2] flex min-h-screen flex-col items-center justify-center gap-10 px-6 text-center">
+      <div className="relative z-[2] flex min-h-screen flex-col items-center justify-center gap-8 px-6 py-16 text-center">
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono text-[clamp(0.55rem,1.8vw,0.7rem)] uppercase tracking-[0.2em] text-ivory/70 sm:tracking-[0.28em]">
           <ShipMini />
-          <SectionLabel lines={["— REGENT × M. SHANKEN —"]} className="text-center text-ivory/70" />
+          <SectionLabel lines={["— WITH GRATITUDE —"]} className="text-center text-ivory/70" />
           <ShipMini />
         </div>
 
-        <motion.p
-          className="m-0 font-display text-[clamp(6rem,14vw,12rem)] italic text-gold"
-          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        <motion.div
+          className="max-w-3xl space-y-4"
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.55 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          FIN.
-        </motion.p>
+          <SplitTitle
+            line1="Thank you."
+            line2="We'd love to set sail with you."
+            sizeClass="text-[clamp(2.5rem,6vw,4rem)]"
+            line2ClassName="text-[clamp(1.35rem,3vw,2rem)] italic text-gold"
+          />
+        </motion.div>
 
-        <p className="m-0 max-w-[min(100%-1rem,52rem)] break-words px-2 text-center font-mono text-[clamp(0.55rem,1.6vw,0.65rem)] uppercase leading-relaxed tracking-[0.14em] text-ivory/50 sm:tracking-[0.22em]">
-          FOR FURTHER DISCUSSION · CONNIE McGILVRAY · MICHAEL CAPACE · M. SHANKEN COMMUNICATIONS
+        <motion.div
+          className="max-w-xl space-y-3 text-center"
+          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.65, delay: 0.15 }}
+        >
+          <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ivory/75">Account Executive</p>
+          <p className="m-0 font-display text-2xl italic text-ivory md:text-3xl">Michael DiChiara</p>
+          <p className="m-0 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-ivory/60">M. Shanken Communications</p>
+        </motion.div>
+
+        <p className="m-0 max-w-lg break-words px-2 text-center font-mono text-[clamp(0.55rem,1.5vw,0.65rem)] uppercase leading-relaxed tracking-[0.12em] text-ivory/50 sm:tracking-[0.18em]">
+          Regent Seven Seas Cruises · A Voyage of the Senses. · Mid-June — December · MMXXVI
         </p>
+
+        <p className="m-0 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-ivory/45">— Account · Michael DiChiara, M. Shanken —</p>
+        <p className="m-0 font-mono text-[0.58rem] uppercase tracking-[0.28em] text-gold/80">— FIN —</p>
 
         <p className="m-0 font-mono text-xs tracking-[0.2em] text-ivory/60 md:hidden">17 / 17</p>
       </div>

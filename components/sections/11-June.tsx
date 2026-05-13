@@ -10,16 +10,18 @@ export default function June11() {
       ariaLabel={meta.ariaLabel}
       month="June"
       year="2026"
-      theme="Launch"
-      headline="Set Sail."
-      italicHeadline="Launch Week."
+      theme="New Season Launch"
+      headline="New Season Launch."
+      italicHeadline="The campaign opens with a chorus — one email, two newsletters, one social moment, on the same week."
       metrics={[
-        { label: "Units", value: "4" },
-        { label: "Impressions", value: "185K" },
-        { label: "Launch", value: "Launch week" },
+        { label: "Dedicated Email", value: "50K Sends" },
+        { label: "Collecting Newsletter", value: "50K Impressions" },
+        { label: "WhiskyNotes Newsletter", value: "65K Impressions" },
+        { label: "Instagram · Post + Story", value: "20K Impressions" },
       ]}
-      description="Deck line: four units, one hundred eighty-five thousand impressions, launch week density. This is the clean open: premium surfaces, tight sequencing, and a handshake between Regent and Whisky Advocate before the season widens."
+      description="Dedicated Email — the hero unit. 35% average open. Lead-gen CTA into Regent's booking funnel. Collecting Newsletter — for the seasoned cellar; frames Regent as the natural next acquisition. WhiskyNotes — carries the dram half of the story into June. Instagram — social handshake; Reel-grade visuals; story with sign-up sticker. 4 units · 185K impressions · launch week."
       visualType="launch"
+      asideCaption="Always-On hub · winespectator.com/regent"
     />
   );
 }

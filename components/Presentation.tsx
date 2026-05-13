@@ -5,9 +5,9 @@ import "lenis/dist/lenis.css";
 
 import Cover01 from "@/components/sections/01-Cover";
 import Intro02 from "@/components/sections/02-Intro";
-import Opportunity03 from "@/components/sections/03-Opportunity";
-import VoyageMap04 from "@/components/sections/04-VoyageMap";
-import Transition05 from "@/components/sections/05-Transition";
+import Audience03 from "@/components/sections/03-Audience";
+import TheWindow04 from "@/components/sections/04-TheWindow";
+import PlanInventory05 from "@/components/sections/05-PlanInventory";
 import Architecture06 from "@/components/sections/06-Architecture";
 import PillarI07 from "@/components/sections/07-PillarI";
 import PillarII08 from "@/components/sections/08-PillarII";
@@ -40,9 +40,9 @@ export function Presentation() {
       <main id="presentation-scroll" className="presentation-scroll relative">
         <Cover01 />
         <Intro02 />
-        <Opportunity03 />
-        <VoyageMap04 />
-        <Transition05 />
+        <Audience03 />
+        <TheWindow04 />
+        <PlanInventory05 />
         <Architecture06 />
         <PillarI07 />
         <PillarII08 />

@@ -10,16 +10,18 @@ export default function September14() {
       ariaLabel={meta.ariaLabel}
       month="September"
       year="2026"
-      theme="WhiskyLive"
-      headline="Port of Call."
-      italicHeadline="WhiskyLive."
+      theme="Spotlight on Whisky LIVE"
+      headline="Spotlight on Whisky LIVE."
+      italicHeadline="Regent rides Whisky Advocate's signature consumer festival — three Stories from the floor, with the right audience already in the room."
       metrics={[
-        { label: "Engagement goal", value: "Defined in plan" },
-        { label: "Instagram audience", value: "70K" },
-        { label: "Activation", value: "WhiskyLive" },
+        { label: "Format", value: "1080×1920 · Mobile-first" },
+        { label: "Frames", value: "3× Story · :15 / frame" },
+        { label: "Impressions", value: "50K" },
+        { label: "Engagement goal", value: "70K IG audience" },
       ]}
-      description="The proposal pairs September with WhiskyLive: engagement goal language plus a seventy-thousand-person Instagram audience anchor, and room for live activation coverage on site."
+      description="Swipe-up to the hub. Festival energy, sommelier cameos, a deck-side dram. Three Story frames over event weekend."
       visualType="live"
+      asideCaption="Whisky LIVE · September 2026"
     />
   );
 }

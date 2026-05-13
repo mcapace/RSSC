@@ -10,16 +10,18 @@ export default function August13() {
       ariaLabel={meta.ariaLabel}
       month="August"
       year="2026"
-      theme="Prestige"
-      headline="High Tide."
-      italicHeadline="Prestige."
+      theme="Prestige Winter Push"
+      headline="Prestige Winter Push."
+      italicHeadline="Three weeks of premium pre-roll plus dynamic display, planted ahead of the winter-itinerary decision window."
       metrics={[
-        { label: "Frequency cap", value: "5×/wk recommended" },
-        { label: "SOP", value: "100%" },
-        { label: "Reach", value: "1.2M" },
+        { label: "Channel", value: "Pre-Roll + Display" },
+        { label: "Goal", value: "eCPM Efficiency" },
+        { label: "Impressions", value: "350K" },
+        { label: "Duration", value: "3 weeks" },
       ]}
-      description="August carries the deck’s explicit guardrail: a five-per-week frequency cap, recommended, while prestige flighting holds reach without thinning the luxury signal."
+      description="Pre-roll places the brand inside the reader's own video consumption on the Extension Network. Dynamic display retargets the next day with itinerary-specific creative. Efficient frequency, premium context, measurable lift. Frequency cap 5×/wk recommended."
       visualType="prestige"
+      asideCaption="Shanken Extension Network · August 2026"
     />
   );
 }

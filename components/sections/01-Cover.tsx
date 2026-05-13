@@ -59,68 +59,91 @@ export default function Cover01() {
       </div>
 
       <div className="relative z-[45] flex min-h-screen flex-col px-6 pb-16 pt-10 md:px-12 md:pb-20 md:pt-12">
-          <div className="flex justify-between gap-6">
-            <motion.div
-              className="font-display text-[1.5rem] italic text-ivory"
-              initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease }}
-            >
-              Regent Seven Seas Cruises
-            </motion.div>
-            <motion.div
-              className="max-w-[min(48vw,320px)] text-right font-mono text-[0.75rem] uppercase tracking-[0.25em] text-ivory/[0.7]"
-              initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease }}
-            >
-              M. SHANKEN COMMUNICATIONS
-            </motion.div>
-          </div>
+        <motion.p
+          className="m-0 font-display text-sm italic text-ivory/80 md:text-base"
+          initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.15, ease }}
+        >
+          Regent Seven Seas × M. Shanken
+        </motion.p>
 
-          <div className="mt-auto flex max-w-[min(92vw,720px)] flex-col gap-6 md:mt-[22vh]">
-            <motion.div
-              initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8, ease }}
-            >
-              <SectionLabel lines={["H2 2026 · A PARTNERSHIP PROGRAM"]} className="text-gold" />
-            </motion.div>
-
-            <SplitTitle
-              line1="A Voyage"
-              line2="of the Senses."
-              stagger={!reduce}
-              sizeClass="text-[clamp(5rem,13vw,12rem)] leading-[0.88]"
-              line2ClassName="text-[clamp(5rem,13vw,12rem)] leading-[0.88]"
-            />
-
-            <motion.div
-              className="mt-4 flex items-center gap-4"
-              initial={reduce ? { opacity: 1 } : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.9, delay: 2.6, ease }}
-            >
-              <span className="inline-block h-px w-[60px] bg-gold" />
-              <p className="m-0 font-mono text-[0.7rem] uppercase tracking-[0.3em] text-ivory/50">
-                MID-JUNE — DECEMBER — MMXXVI
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="scroll-indicator-cover pointer-events-none absolute bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 md:bottom-28">
-            <div className="relative h-10 w-px overflow-hidden bg-gold/30">
-              <motion.span
-                className="absolute left-1/2 top-0 h-1 w-1 -translate-x-1/2 rounded-full bg-gold"
-                animate={reduce ? undefined : { y: [0, 36, 0] }}
-                transition={reduce ? undefined : { duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </div>
-            <span className="font-mono text-[0.7rem] uppercase tracking-[0.25em] text-gold/80">
-              SCROLL
-            </span>
-          </div>
+        <div className="mt-6 flex justify-between gap-6">
+          <motion.div
+            className="font-display text-[1.5rem] italic text-ivory"
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease }}
+          >
+            Regent Seven Seas Cruises
+          </motion.div>
+          <motion.div
+            className="max-w-[min(48vw,320px)] text-right font-mono text-[0.75rem] uppercase tracking-[0.25em] text-ivory/[0.7]"
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease }}
+          >
+            M. Shanken Communications
+          </motion.div>
         </div>
+
+        <div className="mt-auto flex max-w-[min(92vw,760px)] flex-col gap-5 md:mt-[18vh]">
+          <motion.div
+            initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.55, ease }}
+          >
+            <SectionLabel
+              lines={[
+                "H2 2026 · Digital Media Partnership · Deck Script",
+                "17 slides · Mid-June — December MMXXVI · Proposal · Confidential",
+              ]}
+              className="text-gold"
+            />
+          </motion.div>
+
+          <motion.div initial={reduce ? { opacity: 1 } : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.65, ease }}>
+            <SectionLabel lines={["H2 2026 · A Partnership Program"]} className="text-gold/90" />
+          </motion.div>
+
+          <SplitTitle
+            line1="A Voyage"
+            line2="of the Senses."
+            stagger={!reduce}
+            sizeClass="text-[clamp(4.25rem,12vw,12rem)] leading-[0.88]"
+            line2ClassName="text-[clamp(4.25rem,12vw,12rem)] leading-[0.88]"
+          />
+
+          <motion.div
+            className="mt-2 flex flex-col gap-4"
+            initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.9, delay: 2.2, ease }}
+          >
+            <div className="flex items-center gap-4">
+              <span className="inline-block h-px w-[60px] bg-gold" />
+              <p className="m-0 font-mono text-[0.7rem] uppercase tracking-[0.28em] text-ivory/50">
+                Mid-June — December — MMXXVI
+              </p>
+            </div>
+            <p className="m-0 max-w-xl font-mono text-[0.65rem] uppercase leading-relaxed tracking-[0.18em] text-ivory/55">
+              Wine Spectator · Whisky Advocate · Shanken Extension Network
+            </p>
+            <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-gold/80">— PROPOSAL · CONFIDENTIAL —</p>
+          </motion.div>
+        </div>
+
+        <div className="scroll-indicator-cover pointer-events-none absolute bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 md:bottom-28">
+          <div className="relative h-10 w-px overflow-hidden bg-gold/30">
+            <motion.span
+              className="absolute left-1/2 top-0 h-1 w-1 -translate-x-1/2 rounded-full bg-gold"
+              animate={reduce ? undefined : { y: [0, 36, 0] }}
+              transition={reduce ? undefined : { duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+          <span className="font-mono text-[0.7rem] uppercase tracking-[0.25em] text-gold/80">SCROLL</span>
+        </div>
+      </div>
     </SectionFrame>
   );
 }

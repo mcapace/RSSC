@@ -18,6 +18,8 @@ export type MonthSlideProps = {
   sectionIndex: number;
   id: string;
   ariaLabel: string;
+  /** Optional caption under the aside image panel */
+  asideCaption?: string;
 };
 
 const blobPosition: Record<MonthSlideProps["visualType"], string> = {
@@ -40,6 +42,7 @@ export function MonthSlide({
   sectionIndex,
   id,
   ariaLabel,
+  asideCaption,
 }: MonthSlideProps) {
   const reduce = useReducedMotion();
   const mono = `${month} · ${theme}`.toUpperCase();
@@ -126,7 +129,7 @@ export function MonthSlide({
                 />
               </div>
               <p className="m-0 px-4 py-3 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-ivory/55">
-                Sneak peek panel · {year}
+                {asideCaption ?? `Sneak peek panel · ${year}`}
               </p>
             </div>
           </div>
