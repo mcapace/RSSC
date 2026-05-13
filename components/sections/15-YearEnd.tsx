@@ -11,14 +11,15 @@ export default function YearEnd15() {
       month="Nov/Dec"
       year="2026"
       theme="Year-End Lists"
-      headline="The Reckoning."
+      headline="Year-End Lists."
       italicHeadline="The Commitment."
       metrics={[
+        { label: "Nov/Dec", value: "The commitment" },
         { label: "Top 100", value: "Inclusion" },
         { label: "Year-end", value: "Feature" },
         { label: "Newsletter", value: "Frontline" },
       ]}
-      description="Year-end lists are the reckoning readers trust. This window converts months of storytelling into a single, decisive proof point."
+      description="Deck footer language: Nov/Dec and the commitment, with year-end lists as the proof chapter. This is where inclusion, features, and newsletter frontline convert months of storytelling into a single reckoning readers trust."
       visualType="yearEnd"
     />
   );

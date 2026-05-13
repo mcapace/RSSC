@@ -14,11 +14,11 @@ export default function September14() {
       headline="Port of Call."
       italicHeadline="WhiskyLive."
       metrics={[
+        { label: "Engagement goal", value: "Defined in plan" },
         { label: "Instagram audience", value: "70K" },
-        { label: "Engagement", value: "Goal-led" },
-        { label: "Activation", value: "Live" },
+        { label: "Activation", value: "WhiskyLive" },
       ]}
-      description="September aligns with WhiskyLive: a port-of-call moment where on-site energy translates to digital coverage without losing the Regent polish."
+      description="The proposal pairs September with WhiskyLive: engagement goal language plus a seventy-thousand-person Instagram audience anchor, and room for live activation coverage on site."
       visualType="live"
     />
   );

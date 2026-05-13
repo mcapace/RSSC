@@ -14,11 +14,11 @@ export default function August13() {
       headline="High Tide."
       italicHeadline="Prestige."
       metrics={[
-        { label: "Frequency cap", value: "5×/wk" },
+        { label: "Frequency cap", value: "5×/wk recommended" },
         { label: "SOP", value: "100%" },
         { label: "Reach", value: "1.2M" },
       ]}
-      description="August leans into prestige pacing: measured frequency, premium surfaces, and a reach story that feels earned rather than loud."
+      description="August carries the deck’s explicit guardrail: a five-per-week frequency cap, recommended, while prestige flighting holds reach without thinning the luxury signal."
       visualType="prestige"
     />
   );

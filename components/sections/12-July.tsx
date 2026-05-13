@@ -16,9 +16,8 @@ export default function July12() {
       metrics={[
         { label: "SOP", value: "100%" },
         { label: "SOS", value: "100%" },
-        { label: "Frequency cap", value: "5×/wk" },
       ]}
-      description="July widens reach while keeping craft intact: surge placements, a tasteful sneak peek, and guardrails that protect the luxury signal."
+      description="Per the program deck, July is expressed as parity on SOP and SOS while the line widens into surge and sneak-peek storytelling. Frequency discipline moves to August as prestige tightens."
       visualType="surge"
     />
   );

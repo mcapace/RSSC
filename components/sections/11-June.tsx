@@ -16,10 +16,9 @@ export default function June11() {
       metrics={[
         { label: "Units", value: "4" },
         { label: "Impressions", value: "185K" },
-        { label: "SOP", value: "100%" },
-        { label: "SOS", value: "100%" },
+        { label: "Launch", value: "Launch week" },
       ]}
-      description="Launch week concentrates attention when curiosity is highest: four units, premium roadblocking, and a clean handshake between Regent and Whisky Advocate."
+      description="Deck line: four units, one hundred eighty-five thousand impressions, launch week density. This is the clean open: premium surfaces, tight sequencing, and a handshake between Regent and Whisky Advocate before the season widens."
       visualType="launch"
     />
   );
