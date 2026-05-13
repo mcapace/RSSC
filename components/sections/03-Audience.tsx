@@ -69,6 +69,21 @@ export default function Audience03() {
             Facebook 100K · Instagram 70K
           </p>
           <p className="m-0 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-ivory/45">Source · GA4 Jan–Mar 2025 avg</p>
+
+          <motion.div
+            className="mt-10 border-t border-gold/25 pt-10"
+            initial={reduce ? { opacity: 1 } : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.55, delay: 0.05 }}
+          >
+            <p className="m-0 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-gold">Whisky Advocate · Events</p>
+            <p className="m-0 mt-3 max-w-prose font-body text-base leading-relaxed text-ivory/85">
+              {
+                "WhiskyFest NYC · Nov 20, 2026 · reimagined, elevated tasting, in-app experience — on-site flagship for the WA reader between pours, seminars, and retail."
+              }
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </SectionFrame>

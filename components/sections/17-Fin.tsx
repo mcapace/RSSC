@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { SectionFrame } from "@/components/SectionFrame";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SplitTitle } from "@/components/ui/SplitTitle";
-import { SECTIONS } from "@/lib/sections";
+import { SECTIONS, TOTAL_SLIDES } from "@/lib/sections";
 
 function ShipMini() {
   return (
@@ -16,11 +16,12 @@ function ShipMini() {
 }
 
 export default function Fin17() {
-  const meta = SECTIONS[16];
+  const lastIndex = TOTAL_SLIDES - 1;
+  const meta = SECTIONS[lastIndex];
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={16} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
+    <SectionFrame index={lastIndex} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
       <motion.div
         className="absolute inset-0"
         initial={reduce ? { scale: 1 } : { scale: 1 }}
@@ -87,7 +88,9 @@ export default function Fin17() {
         <p className="m-0 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-ivory/45">— Account · Michael DiChiara, M. Shanken —</p>
         <p className="m-0 font-mono text-[0.58rem] uppercase tracking-[0.28em] text-gold/80">— FIN —</p>
 
-        <p className="m-0 font-mono text-xs tracking-[0.2em] text-ivory/60 md:hidden">17 / 17</p>
+        <p className="m-0 font-mono text-xs tracking-[0.2em] text-ivory/60 md:hidden">
+          {String(meta.pageNumber).padStart(2, "0")} / {String(TOTAL_SLIDES).padStart(2, "0")}
+        </p>
       </div>
     </SectionFrame>
   );

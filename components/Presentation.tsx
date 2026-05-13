@@ -19,6 +19,9 @@ import August13 from "@/components/sections/13-August";
 import September14 from "@/components/sections/14-September";
 import YearEnd15 from "@/components/sections/15-YearEnd";
 import Measurement16 from "@/components/sections/16-Measurement";
+import EventsOverview18 from "@/components/sections/18-EventsOverview";
+import WhiskyFestOpportunities19 from "@/components/sections/19-WhiskyFestOpportunities";
+import WhiskyFestTiers20 from "@/components/sections/20-WhiskyFestTiers";
 import Fin17 from "@/components/sections/17-Fin";
 
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -54,6 +57,9 @@ export function Presentation() {
         <September14 />
         <YearEnd15 />
         <Measurement16 />
+        <EventsOverview18 />
+        <WhiskyFestOpportunities19 />
+        <WhiskyFestTiers20 />
         <Fin17 />
       </main>
       <PersistentOverlay activeIndex={activeIndex} hideTopChrome={activeIndex === 0} />
