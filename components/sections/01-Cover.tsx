@@ -25,7 +25,7 @@ export default function Cover01() {
       index={0}
       id={meta.id}
       ariaLabel={meta.ariaLabel}
-      className="relative overflow-hidden bg-bg"
+      className="relative overflow-x-hidden bg-bg"
       domRef={sectionRef}
     >
       <div className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-2/3">
@@ -108,7 +108,7 @@ export default function Cover01() {
             </motion.div>
           </div>
 
-          <div className="scroll-indicator-cover pointer-events-none absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3">
+          <div className="scroll-indicator-cover pointer-events-none absolute bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 md:bottom-28">
             <div className="relative h-10 w-px overflow-hidden bg-gold/30">
               <motion.span
                 className="absolute left-1/2 top-0 h-1 w-1 -translate-x-1/2 rounded-full bg-gold"

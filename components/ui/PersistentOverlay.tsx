@@ -21,7 +21,7 @@ export function PersistentOverlay({ activeIndex, hideTopChrome }: Props) {
     >
       <div
         className={clsx(
-          "absolute left-8 top-8 font-display text-[1.5rem] italic text-ivory/60 transition-opacity duration-500",
+          "absolute left-4 top-6 max-w-[min(92vw,520px)] font-display text-[clamp(1.1rem,2.8vw,1.5rem)] italic text-ivory/60 transition-opacity duration-500 md:left-8 md:top-8",
           hideTopChrome && "opacity-0"
         )}
       >
@@ -29,21 +29,25 @@ export function PersistentOverlay({ activeIndex, hideTopChrome }: Props) {
       </div>
       <div
         className={clsx(
-          "absolute right-8 top-8 max-w-[min(40vw,320px)] text-right font-mono text-[0.75rem] uppercase tracking-[0.25em] text-ivory/[0.7] transition-opacity duration-500",
+          "absolute right-4 top-6 max-w-[min(52vw,280px)] text-right font-mono text-[0.65rem] uppercase leading-snug tracking-[0.18em] text-ivory/[0.7] transition-opacity duration-500 md:right-8 md:top-8 md:max-w-[min(40vw,320px)] md:text-[0.75rem] md:tracking-[0.25em]",
           hideTopChrome && "opacity-0"
         )}
       >
         M. SHANKEN COMMUNICATIONS
       </div>
 
-      <div className="absolute bottom-8 left-8 max-w-[28vw] font-body text-sm text-ivory/60">
-        {meta.overlayName}
-      </div>
-      <div className="absolute bottom-8 left-1/2 w-[min(90vw,520px)] -translate-x-1/2 text-center font-display text-lg text-ivory/60">
-        {meta.overlayTitle}
-      </div>
-      <div className="absolute bottom-8 right-8 font-mono text-xs tracking-[0.2em] text-ivory/60">
-        {page} / {total}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg from-40% via-bg/85 to-transparent pb-4 pt-16 md:pb-5 md:pt-20">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-end gap-y-3 px-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_minmax(0,1fr)] sm:gap-x-4 md:px-8">
+          <div className="min-w-0 text-left font-body text-xs text-ivory/60 sm:text-sm">
+            <span className="block break-words">{meta.overlayName}</span>
+          </div>
+          <div className="min-w-0 text-center font-display text-sm leading-snug text-ivory/60 sm:text-base md:text-lg">
+            <span className="block break-words text-balance">{meta.overlayTitle}</span>
+          </div>
+          <div className="min-w-0 text-left font-mono text-[0.65rem] tracking-[0.18em] text-ivory/60 sm:text-right sm:text-xs md:tracking-[0.2em]">
+            {page} / {total}
+          </div>
+        </div>
       </div>
     </div>
   );

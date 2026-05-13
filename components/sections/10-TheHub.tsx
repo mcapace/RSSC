@@ -19,7 +19,7 @@ function CornerCallout({
 }) {
   return (
     <motion.div
-      className="pointer-events-none absolute font-mono text-[0.55rem] uppercase tracking-[0.18em] text-ivory/70"
+      className="pointer-events-none absolute max-w-[min(46vw,160px)] break-words font-mono text-[0.55rem] uppercase leading-snug tracking-[0.18em] text-ivory/70"
       style={style}
       initial={reduce ? { opacity: 1 } : { opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -44,8 +44,8 @@ export default function TheHub10() {
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={9} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg px-6 py-16 md:px-12 md:py-20">
-      <div className="mx-auto grid min-h-[calc(100vh-8rem)] max-w-6xl items-center gap-12 md:grid-cols-[0.42fr_0.58fr]">
+    <SectionFrame index={9} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
+      <div className="mx-auto grid min-h-0 w-full max-w-6xl items-start gap-12 px-6 py-12 md:grid-cols-[0.42fr_0.58fr] md:px-12 md:py-16">
         <div className="space-y-6">
           <SectionLabel lines={["— THE HUB"]} />
           <SplitTitle

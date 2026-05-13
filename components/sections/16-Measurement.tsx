@@ -77,8 +77,8 @@ export default function Measurement16() {
   ] as const;
 
   return (
-    <SectionFrame index={15} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg px-6 py-16 md:px-12 md:py-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12">
+    <SectionFrame index={15} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-12 md:px-12 md:py-16">
         <div className="space-y-4">
           <SectionLabel lines={["— MEASUREMENT"]} />
           <SplitTitle
@@ -90,21 +90,21 @@ export default function Measurement16() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="space-y-4 rounded-sm border border-gold/35 px-5 py-6">
+          <div className="min-w-0 space-y-4 rounded-sm border border-gold/35 px-5 py-6">
             <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold">Lens I</p>
             <p className="m-0 font-display text-2xl italic text-ivory">Reach</p>
             <p className="m-0 font-body text-sm text-ivory/75">Impressions, unique visitors, frequency.</p>
             <Rings reduce={!!reduce} />
           </div>
 
-          <div className="space-y-4 rounded-sm border border-gold/35 px-5 py-6">
+          <div className="min-w-0 space-y-4 rounded-sm border border-gold/35 px-5 py-6">
             <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold">Lens II</p>
             <p className="m-0 font-display text-2xl italic text-ivory">Engagement</p>
             <p className="m-0 font-body text-sm text-ivory/75">Time on page, social engagement, newsletter CTR.</p>
             <Sparkline reduce={!!reduce} />
           </div>
 
-          <div className="space-y-4 rounded-sm border border-gold/35 px-5 py-6">
+          <div className="min-w-0 space-y-4 rounded-sm border border-gold/35 px-5 py-6">
             <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-gold">Lens III</p>
             <p className="m-0 font-display text-2xl italic text-ivory">Brand lift</p>
             <p className="m-0 font-body text-sm text-ivory/75">Survey, affinity, intent.</p>
@@ -121,9 +121,9 @@ export default function Measurement16() {
         >
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {kpis.map((k) => (
-              <div key={k.l} className="text-center">
-                <p className="m-0 font-display text-xl italic text-gold md:text-2xl">{k.n}</p>
-                <p className="m-0 mt-2 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-ivory/55">
+              <div key={k.l} className="min-w-0 text-center">
+                <p className="m-0 break-words font-display text-xl italic text-gold md:text-2xl">{k.n}</p>
+                <p className="m-0 mt-2 break-words font-mono text-[0.6rem] uppercase tracking-[0.18em] text-ivory/55">
                   {k.l}
                 </p>
               </div>

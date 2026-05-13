@@ -36,6 +36,7 @@ export function SectionFrame({ index, id, ariaLabel, className, children, domRef
       aria-label={ariaLabel}
       className={clsx(
         "presentation-section relative min-h-screen w-full scroll-snap-start snap-start",
+        "pb-[clamp(7rem,18vh,11rem)] pr-14 md:pb-40 md:pr-20",
         className
       )}
     >

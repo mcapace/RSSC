@@ -296,7 +296,7 @@ export default function VoyageMap04() {
               className="border border-gold/50 bg-transparent px-6 py-6 transition-colors duration-300 hover:border-gold hover:bg-surface"
             >
               <p className="m-0 font-mono text-[0.7rem] uppercase tracking-[0.22em] text-gold">{tile.k}</p>
-              <p className="m-0 mt-3 font-display text-lg italic text-ivory">{tile.d}</p>
+              <p className="m-0 mt-2 break-words font-display text-lg italic leading-snug text-ivory">{tile.d}</p>
             </motion.div>
           ))}
         </div>

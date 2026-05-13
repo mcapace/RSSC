@@ -19,7 +19,7 @@ export default function Fin17() {
   const reduce = useReducedMotion();
 
   return (
-    <SectionFrame index={16} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-hidden bg-bg">
+    <SectionFrame index={16} id={meta.id} ariaLabel={meta.ariaLabel} className="relative overflow-x-hidden bg-bg">
       <motion.div
         className="absolute inset-0"
         initial={reduce ? { scale: 1 } : { scale: 1 }}
@@ -47,7 +47,7 @@ export default function Fin17() {
       </motion.div>
 
       <div className="relative z-[2] flex min-h-screen flex-col items-center justify-center gap-10 px-6 text-center">
-        <div className="flex items-center gap-4 font-mono text-[0.7rem] uppercase tracking-[0.28em] text-ivory/70">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-mono text-[clamp(0.55rem,1.8vw,0.7rem)] uppercase tracking-[0.2em] text-ivory/70 sm:tracking-[0.28em]">
           <ShipMini />
           <SectionLabel lines={["— REGENT × M. SHANKEN —"]} className="text-center text-ivory/70" />
           <ShipMini />
@@ -63,7 +63,7 @@ export default function Fin17() {
           FIN.
         </motion.p>
 
-        <p className="m-0 max-w-[900px] font-mono text-[0.65rem] uppercase tracking-[0.22em] text-ivory/50">
+        <p className="m-0 max-w-[min(100%-1rem,52rem)] break-words px-2 text-center font-mono text-[clamp(0.55rem,1.6vw,0.65rem)] uppercase leading-relaxed tracking-[0.14em] text-ivory/50 sm:tracking-[0.22em]">
           FOR FURTHER DISCUSSION · CONNIE McGILVRAY · MICHAEL CAPACE · M. SHANKEN COMMUNICATIONS
         </p>
 

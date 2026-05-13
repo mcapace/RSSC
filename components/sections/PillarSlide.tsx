@@ -34,9 +34,9 @@ export function PillarSlide({
 
   return (
     <SectionFrame index={sectionIndex} id={id} ariaLabel={ariaLabel} className="bg-bg">
-      <div className="mx-auto grid min-h-screen max-w-[1400px] gap-10 px-6 py-16 md:grid-cols-[0.4fr_0.6fr] md:px-12 md:py-20">
+      <div className="mx-auto grid min-h-0 w-full max-w-[1400px] gap-10 px-6 py-12 md:grid-cols-[0.4fr_0.6fr] md:px-12 md:py-16">
         <motion.div
-          className="relative flex flex-col justify-center gap-6"
+          className="relative flex min-h-0 flex-col justify-start gap-6 md:justify-center"
           initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.45 }}
@@ -60,13 +60,15 @@ export function PillarSlide({
           <SectionLabel lines={[pillarNumber]} />
 
           <div className="relative z-[1] space-y-4">
-            <h2 className="m-0 max-w-[18ch] font-display text-[clamp(2.5rem,5vw,4rem)] font-medium text-ivory">
+            <h2 className="m-0 max-w-full text-balance font-display text-[clamp(2.25rem,4.5vw,4rem)] font-medium leading-[1.05] text-ivory md:max-w-[min(48ch,100%)]">
               {title}
             </h2>
-            <p className="m-0 max-w-[28ch] font-display text-[clamp(1.25rem,2.4vw,1.75rem)] italic text-gold">
+            <p className="m-0 max-w-full text-pretty font-display text-[clamp(1.15rem,2.2vw,1.75rem)] italic leading-snug text-gold md:max-w-[min(40ch,100%)]">
               {subtitle}
             </p>
-            <p className="m-0 max-w-[32ch] font-body text-base text-ivory/80">{description}</p>
+            <p className="m-0 max-w-full text-pretty font-body text-base leading-relaxed text-ivory/80 md:max-w-prose">
+              {description}
+            </p>
           </div>
 
           <div className="relative z-[1] mt-4 grid gap-3 sm:grid-cols-2">
@@ -76,7 +78,7 @@ export function PillarSlide({
                 className="border border-gold/40 px-4 py-3 transition-colors duration-300 hover:border-gold hover:bg-surface"
               >
                 <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-gold">{u.label}</p>
-                <p className="m-0 mt-2 font-display text-lg italic text-ivory">{u.value}</p>
+                <p className="m-0 mt-2 break-words font-display text-lg italic leading-snug text-ivory">{u.value}</p>
               </div>
             ))}
           </div>

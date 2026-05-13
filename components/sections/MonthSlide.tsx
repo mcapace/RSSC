@@ -45,14 +45,14 @@ export function MonthSlide({
   const mono = `${month} · ${theme}`.toUpperCase();
 
   return (
-    <SectionFrame index={sectionIndex} id={id} ariaLabel={ariaLabel} className="relative overflow-hidden bg-bg">
+    <SectionFrame index={sectionIndex} id={id} ariaLabel={ariaLabel} className="relative overflow-x-hidden bg-bg">
       <div
         className="pointer-events-none absolute inset-0 blur-[200px]"
         style={{ background: blobPosition[visualType] }}
         aria-hidden
       />
 
-      <div className="relative mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-[auto_1fr] md:px-12 md:py-20">
+      <div className="relative mx-auto grid min-h-0 w-full max-w-6xl items-start gap-10 px-6 py-12 md:grid-cols-[auto_1fr] md:px-12 md:py-16">
         <motion.div
           className="pointer-events-none hidden select-none font-display text-[clamp(6rem,10vw,9rem)] italic text-gold/30 md:block"
           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
@@ -106,13 +106,15 @@ export function MonthSlide({
                 <p className="m-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ivory/60">
                   {m.label}
                 </p>
-                <p className="m-0 mt-2 font-display text-xl italic text-gold">{m.value}</p>
+                <p className="m-0 mt-2 break-words font-display text-xl italic leading-snug text-gold">{m.value}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            <p className="m-0 max-w-[52ch] flex-1 font-body text-base text-ivory/80">{description}</p>
+            <p className="m-0 max-w-[min(52ch,100%)] flex-1 break-words font-body text-base leading-relaxed text-ivory/80">
+              {description}
+            </p>
             <div className="relative w-full max-w-[320px] shrink-0 overflow-hidden rounded-sm border border-gold/35 bg-surface/60">
               <div className="relative h-44 w-full">
                 <Image

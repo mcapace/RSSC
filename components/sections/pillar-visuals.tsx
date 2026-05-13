@@ -123,7 +123,7 @@ export function PillarIIVisual() {
             </div>
             <div className="space-y-2 px-4 py-3">
               <p className="m-0 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-gold">{a.kicker}</p>
-              <p className="m-0 font-display text-xl italic text-ivory">{a.title}</p>
+              <p className="m-0 font-display text-xl italic leading-snug text-ivory [overflow-wrap:anywhere]">{a.title}</p>
               <p className="m-0 font-mono text-[0.55rem] uppercase tracking-[0.16em] text-ivory/50">{a.byline}</p>
             </div>
           </motion.div>

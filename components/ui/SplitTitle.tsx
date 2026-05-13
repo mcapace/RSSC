@@ -33,10 +33,15 @@ export function SplitTitle({
 
   if (!stagger || reduce) {
     return (
-      <div className={clsx("leading-[0.9] tracking-[-0.02em]", className)}>
+      <div
+        className={clsx(
+          "max-w-full break-words leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere]",
+          className
+        )}
+      >
         <p
           className={clsx(
-            "m-0 font-display font-medium text-ivory",
+            "m-0 max-w-full font-display font-medium text-ivory",
             sizeClass,
             line1ClassName
           )}
@@ -46,7 +51,7 @@ export function SplitTitle({
         {line2 ? (
           <p
             className={clsx(
-              "m-0 ml-[8%] font-display font-medium italic text-gold",
+              "m-0 ml-[6%] max-w-[min(100%,52rem)] font-display font-medium italic text-gold md:ml-[8%]",
               sizeClass,
               line2ClassName
             )}
@@ -59,8 +64,13 @@ export function SplitTitle({
   }
 
   return (
-    <div className={clsx("leading-[0.9] tracking-[-0.02em]", className)}>
-      <p className={clsx("m-0 flex flex-wrap font-display font-medium text-ivory", sizeClass, line1ClassName)}>
+    <div
+      className={clsx(
+        "max-w-full break-words leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere]",
+        className
+      )}
+    >
+      <p className={clsx("m-0 flex max-w-full flex-wrap font-display font-medium text-ivory", sizeClass, line1ClassName)}>
         {line1Chars.map((ch, i) => (
           <motion.span
             key={`l1-${i}`}
@@ -76,7 +86,7 @@ export function SplitTitle({
       {line2 ? (
         <p
           className={clsx(
-            "m-0 ml-[8%] flex flex-wrap font-display font-medium italic text-gold",
+            "m-0 ml-[6%] flex max-w-[min(100%,52rem)] flex-wrap font-display font-medium italic text-gold md:ml-[8%]",
             sizeClass,
             line2ClassName
           )}
