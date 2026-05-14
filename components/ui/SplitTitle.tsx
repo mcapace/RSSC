@@ -9,7 +9,10 @@ type Props = {
   className?: string;
   line1ClassName?: string;
   line2ClassName?: string;
+  /** Primary display line size (line1). Defaults to deck title scale. */
   sizeClass?: string;
+  /** When line2 is set, it defaults to deck-subtitle unless overridden here. */
+  line2SizeClass?: string;
   stagger?: boolean;
   staggerDelay?: number;
 };
@@ -22,7 +25,8 @@ export function SplitTitle({
   className,
   line1ClassName,
   line2ClassName,
-  sizeClass = "text-[clamp(4rem,12vw,11rem)]",
+  line2SizeClass,
+  sizeClass = "text-deck-title",
   stagger = false,
   staggerDelay = 0,
 }: Props) {
@@ -31,52 +35,30 @@ export function SplitTitle({
   const line1Chars = line1.split("");
   const line2Chars = (line2 ?? "").split("");
 
+  const line2Typography = clsx(
+    "mt-3 block w-full max-w-deck font-body font-normal italic leading-relaxed text-gold/90",
+    line2SizeClass ?? "text-deck-subtitle",
+    line2ClassName
+  );
+
   if (!stagger || reduce) {
     return (
-      <div
-        className={clsx(
-          "max-w-full break-words leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere]",
-          className
-        )}
-      >
-        <p
-          className={clsx(
-            "m-0 max-w-full font-display font-medium text-ivory",
-            sizeClass,
-            line1ClassName
-          )}
-        >
-          {line1}
-        </p>
-        {line2 ? (
-          <p
-            className={clsx(
-              "m-0 ml-[6%] max-w-[min(100%,52rem)] font-display font-medium italic text-gold md:ml-[8%]",
-              sizeClass,
-              line2ClassName
-            )}
-          >
-            {line2}
-          </p>
-        ) : null}
+      <div className={clsx("max-w-deck-wide text-pretty", className)}>
+        <p className={clsx("m-0 font-display font-medium text-ivory", sizeClass, line1ClassName)}>{line1}</p>
+        {line2 ? <p className={clsx("m-0", line2Typography)}>{line2}</p> : null}
       </div>
     );
   }
 
   return (
-    <div
-      className={clsx(
-        "max-w-full break-words leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere]",
-        className
-      )}
-    >
+    <div className={clsx("max-w-deck-wide text-pretty", className)}>
       <p className={clsx("m-0 flex max-w-full flex-wrap font-display font-medium text-ivory", sizeClass, line1ClassName)}>
         {line1Chars.map((ch, i) => (
           <motion.span
             key={`l1-${i}`}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: staggerDelay + 1.0 + i * 0.04, ease }}
+            transition={{ duration: 0.85, delay: staggerDelay + 0.35 + i * 0.025, ease }}
             style={{ display: "inline-block", whiteSpace: ch === " " ? "pre" : undefined }}
           >
             {ch === " " ? "\u00a0" : ch}
@@ -84,19 +66,13 @@ export function SplitTitle({
         ))}
       </p>
       {line2 ? (
-        <p
-          className={clsx(
-            "m-0 ml-[6%] flex max-w-[min(100%,52rem)] flex-wrap font-display font-medium italic text-gold md:ml-[8%]",
-            sizeClass,
-            line2ClassName
-          )}
-        >
+        <p className={clsx("m-0 flex max-w-full flex-wrap", line2Typography)}>
           {line2Chars.map((ch, i) => (
             <motion.span
               key={`l2-${i}`}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: staggerDelay + 1.8 + i * 0.04, ease }}
+              transition={{ duration: 0.75, delay: staggerDelay + 0.55 + i * 0.02, ease }}
               style={{ display: "inline-block", whiteSpace: ch === " " ? "pre" : undefined }}
             >
               {ch === " " ? "\u00a0" : ch}

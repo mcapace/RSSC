@@ -19,14 +19,13 @@ export default function Audience03() {
 
   return (
     <SectionFrame index={2} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-6xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative mx-auto w-full max-w-deck-wide">
         <SectionLabel lines={["— THE AUDIENCE"]} />
         <div className="mt-8">
           <SplitTitle
             line1="The Audience"
             line2="Affluent epicureans, already on board."
-            sizeClass="text-[clamp(2.4rem,5vw,3.75rem)]"
-            line2ClassName="text-[clamp(1.4rem,3vw,2.2rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

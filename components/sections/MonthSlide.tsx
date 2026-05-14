@@ -59,9 +59,9 @@ export function MonthSlide({
         transition={reduce ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto grid min-h-0 w-full max-w-6xl items-start gap-10 px-6 py-12 md:grid-cols-[auto_1fr] md:px-12 md:py-16">
+      <div className="relative mx-auto grid min-h-0 w-full max-w-deck-wide items-start gap-8 md:grid-cols-[auto_1fr] md:gap-10">
         <motion.div
-          className="pointer-events-none hidden select-none font-display text-[clamp(6rem,10vw,9rem)] italic text-gold/30 md:block"
+          className="pointer-events-none hidden select-none font-display text-[clamp(2.75rem,7vw,4.5rem)] italic text-gold/30 md:block"
           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
@@ -87,8 +87,9 @@ export function MonthSlide({
             line2={italicHeadline}
             stagger={!reduce}
             staggerDelay={0.2}
-            sizeClass="text-[clamp(2.8rem,6vw,4.5rem)]"
-            line2ClassName="text-[clamp(2.2rem,4.5vw,3.25rem)] italic text-gold"
+            sizeClass="text-deck-month font-display font-medium text-ivory"
+            line2SizeClass="text-deck-month-sub"
+            line2ClassName="font-display font-medium italic text-gold"
           />
 
           <motion.div

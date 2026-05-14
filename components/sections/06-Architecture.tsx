@@ -42,14 +42,13 @@ export default function Architecture06() {
         transition={reduce ? undefined : { duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative z-[1] mx-auto w-full max-w-deck">
         <SectionLabel lines={["— THE PROGRAM"]} />
         <div className="mt-8">
           <SplitTitle
             line1="The Program"
             line2="Three pillars, one season, one shared idea."
-            sizeClass="text-[clamp(2.35rem,4.8vw,3.5rem)]"
-            line2ClassName="text-[clamp(1.35rem,2.8vw,2rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

@@ -52,14 +52,13 @@ export default function Measurement16() {
         animate={reduce ? undefined : { opacity: [0.25, 0.45, 0.3], scale: [1, 1.05, 1] }}
         transition={reduce ? undefined : { duration: 11, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-12 md:px-12 md:py-16">
+      <div className="relative mx-auto flex w-full max-w-deck-wide flex-col gap-10">
         <div className="space-y-4">
           <SectionLabel lines={["— MEASUREMENT"]} />
           <SplitTitle
             line1="Measurement."
             line2="What success looks like."
-            sizeClass="text-[clamp(2.2rem,4.2vw,3.25rem)]"
-            line2ClassName="text-[clamp(1.4rem,2.8vw,2rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

@@ -27,7 +27,7 @@ export default function TheHub10() {
         animate={reduce ? undefined : { opacity: [0.35, 0.55, 0.4] }}
         transition={reduce ? undefined : { duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative mx-auto grid min-h-0 w-full max-w-6xl items-start gap-12 px-6 py-12 md:grid-cols-[0.45fr_0.55fr] md:px-12 md:py-16">
+      <div className="relative mx-auto grid min-h-0 w-full max-w-deck-wide items-start gap-10 md:grid-cols-[0.45fr_0.55fr] md:gap-12">
         <div className="space-y-6">
           <motion.div
             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
@@ -46,8 +46,8 @@ export default function TheHub10() {
             <SplitTitle
               line1="The hub at winespectator.com/regent."
               line2="A bespoke sponsored hub that holds the three pillars in one place — Voyage Map embedded, Sponsored Series serialized, Dram Diaries archived as it airs."
-              sizeClass="text-[clamp(1.65rem,3.2vw,2.35rem)]"
-              line2ClassName="text-[clamp(1rem,1.9vw,1.35rem)] not-italic text-gold/95 md:ml-[4%]"
+              sizeClass="text-deck-lede font-display font-medium text-ivory"
+              line2ClassName="!not-italic text-gold/90"
             />
           </motion.div>
           <motion.div

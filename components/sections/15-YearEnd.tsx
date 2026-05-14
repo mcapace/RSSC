@@ -22,14 +22,13 @@ export default function YearEnd15() {
         transition={reduce ? undefined : { duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-12 md:px-12 md:py-16">
+      <div className="relative mx-auto w-full max-w-deck-wide">
         <SectionLabel lines={["— MOVEMENT III · COMMIT · NOVEMBER · DECEMBER · 2026"]} />
         <div className="mt-6 max-w-4xl">
           <SplitTitle
             line1="The year ends on the page the reader reads twice."
             line2="November · December — Year-End Lists"
-            sizeClass="text-[clamp(1.85rem,3.8vw,2.85rem)]"
-            line2ClassName="text-[clamp(1.35rem,2.8vw,2rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

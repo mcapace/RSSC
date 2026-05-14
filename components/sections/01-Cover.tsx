@@ -58,7 +58,7 @@ export default function Cover01() {
         </motion.div>
       </div>
 
-      <div className="relative z-[45] flex min-h-screen flex-col px-6 pb-16 pt-10 md:px-12 md:pb-20 md:pt-12">
+      <div className="relative z-[45] flex min-h-screen flex-col pb-16 pt-10 md:pb-20 md:pt-12">
         <motion.p
           className="m-0 font-display text-sm italic text-ivory/80 md:text-base"
           initial={reduce ? { opacity: 1 } : { opacity: 0 }}
@@ -70,7 +70,7 @@ export default function Cover01() {
 
         <div className="mt-6 flex justify-between gap-6">
           <motion.div
-            className="font-display text-[1.5rem] italic text-ivory"
+            className="font-display text-lg italic text-ivory sm:text-xl md:text-2xl"
             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease }}
@@ -78,7 +78,7 @@ export default function Cover01() {
             Regent Seven Seas Cruises
           </motion.div>
           <motion.div
-            className="max-w-[min(48vw,320px)] text-right font-mono text-[0.75rem] uppercase tracking-[0.25em] text-ivory/[0.7]"
+            className="max-w-[min(52vw,18rem)] text-right font-mono text-[0.625rem] uppercase leading-snug tracking-[0.14em] text-ivory/70 sm:max-w-xs sm:text-[0.6875rem] sm:tracking-[0.16em]"
             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease }}
@@ -87,7 +87,7 @@ export default function Cover01() {
           </motion.div>
         </div>
 
-        <div className="mt-auto flex max-w-[min(92vw,760px)] flex-col gap-5 md:mt-[18vh]">
+        <div className="mt-auto flex max-w-deck flex-col gap-5 md:mt-[18vh]">
           <motion.div
             initial={reduce ? { opacity: 1 } : { opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -110,8 +110,9 @@ export default function Cover01() {
             line1="A Voyage"
             line2="of the Senses."
             stagger={!reduce}
-            sizeClass="text-[clamp(4.25rem,12vw,12rem)] leading-[0.88]"
-            line2ClassName="text-[clamp(4.25rem,12vw,12rem)] leading-[0.88]"
+            sizeClass="text-deck-hero"
+            line2SizeClass="text-deck-hero"
+            line2ClassName="font-display font-medium italic text-ivory"
           />
 
           <motion.div

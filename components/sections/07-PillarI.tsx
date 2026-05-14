@@ -33,14 +33,15 @@ export default function PillarI07() {
         animate={reduce ? undefined : { opacity: [0.3, 0.5, 0.34], rotate: [0, 6, 0] }}
         transition={reduce ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative z-[1] mx-auto w-full max-w-deck">
         <SectionLabel lines={["— PILLAR I"]} />
         <div className="mt-6">
           <SplitTitle
             line1="Interactive Voyage Map."
-            line2="A living visual that turns Regent's itineraries into a tasting tour of the world."
-            sizeClass="text-[clamp(2.2rem,4.2vw,3.25rem)]"
-            line2ClassName="text-[clamp(1.2rem,2.4vw,1.75rem)] italic text-gold"
+            line2={
+              "A living visual that turns Regent's itineraries into a tasting tour of the world."
+            }
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

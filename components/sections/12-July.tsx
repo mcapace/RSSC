@@ -25,14 +25,13 @@ export default function July12() {
         transition={reduce ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-12 md:px-12 md:py-16">
+      <div className="relative mx-auto w-full max-w-deck-wide">
         <SectionLabel lines={["— MOVEMENT I · AWAKEN · JULY · 2026"]} />
         <div className="mt-6 max-w-4xl">
           <SplitTitle
             line1="Two flights, running in parallel."
             line2="July · Mid-Year Surge + WC '29"
-            sizeClass="text-[clamp(2rem,4.5vw,3.25rem)]"
-            line2ClassName="text-[clamp(1.5rem,3vw,2.25rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

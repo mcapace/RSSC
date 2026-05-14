@@ -38,14 +38,13 @@ export default function WhiskyFestTiers20() {
 
   return (
     <SectionFrame index={18} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-6xl px-6 py-14 md:px-12 md:py-16">
+      <div className="relative mx-auto w-full max-w-deck-wide">
         <SectionLabel lines={["20B · WHISKYFEST 2026 · TIERS + INNOVATIONS"]} />
         <div className="mt-6">
           <SplitTitle
             line1="WhiskyFest 2026."
             line2="Hand-to-hand with the buyer who already says yes."
-            sizeClass="text-[clamp(2rem,4vw,3rem)]"
-            line2ClassName="text-[clamp(1.2rem,2.5vw,1.85rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

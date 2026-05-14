@@ -33,14 +33,13 @@ export default function PillarIII09() {
         animate={reduce ? undefined : { opacity: [0.25, 0.42, 0.3], scale: [1, 1.08, 1] }}
         transition={reduce ? undefined : { duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative z-[1] mx-auto w-full max-w-deck">
         <SectionLabel lines={["— PILLAR III"]} />
         <div className="mt-6">
           <SplitTitle
             line1="Dram Diaries with Jonny McCormack."
-            line2="Whisky Advocate's most-read columnist boards Regent — and brings his readership with him."
-            sizeClass="text-[clamp(1.85rem,3.6vw,2.75rem)]"
-            line2ClassName="text-[clamp(1.1rem,2.2vw,1.6rem)] italic text-gold"
+            line2={"Whisky Advocate's most-read columnist boards Regent — and brings his readership with him."}
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

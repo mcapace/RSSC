@@ -63,9 +63,10 @@ export default function Fin17() {
         >
           <SplitTitle
             line1="Thank you."
-            line2="We'd love to set sail with you."
-            sizeClass="text-[clamp(2.5rem,6vw,4rem)]"
-            line2ClassName="text-[clamp(1.35rem,3vw,2rem)] italic text-gold"
+            line2={"We'd love to set sail with you."}
+            sizeClass="font-display font-medium text-3xl leading-tight sm:text-4xl md:text-5xl"
+            line2SizeClass="text-deck-subtitle sm:text-xl"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </motion.div>
 

@@ -42,7 +42,7 @@ export default function WhiskyFestOpportunities19() {
 
   return (
     <SectionFrame index={17} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative mx-auto w-full max-w-deck">
         <SectionLabel lines={["— EVENT OPPORTUNITIES · WHISKYFEST NYC"]} />
         <motion.div
           className="mt-6 space-y-3"
@@ -61,10 +61,7 @@ export default function WhiskyFestOpportunities19() {
             WhiskyFest NYC · Nov 20, 2026
           </motion.p>
           <div className="mt-4">
-            <SplitTitle
-              line1="Reimagined · Elevated Tasting · In-App Experience"
-              sizeClass="text-[clamp(1.5rem,3.2vw,2.35rem)]"
-            />
+            <SplitTitle line1="Reimagined · Elevated Tasting · In-App Experience" sizeClass="text-deck-lede font-display font-medium text-ivory" />
           </div>
         </motion.div>
 

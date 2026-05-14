@@ -28,14 +28,13 @@ export default function TheWindow04() {
 
   return (
     <SectionFrame index={3} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative mx-auto w-full max-w-deck-wide">
         <SectionLabel lines={["— THE WINDOW"]} />
         <div className="mt-8">
           <SplitTitle
             line1="The Window"
             line2="A second-half campaign in seven movements."
-            sizeClass="text-[clamp(2.35rem,4.8vw,3.5rem)]"
-            line2ClassName="text-[clamp(1.35rem,2.8vw,2rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

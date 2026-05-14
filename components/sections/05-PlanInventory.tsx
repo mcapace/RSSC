@@ -32,14 +32,13 @@ export default function PlanInventory05() {
 
   return (
     <SectionFrame index={4} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative mx-auto w-full max-w-deck-wide">
         <SectionLabel lines={["— PLAN INVENTORY · PER PROPOSAL · ADJUSTED DATES"]} />
         <div className="mt-8">
           <SplitTitle
             line1="Plan Inventory"
             line2="Fifteen placements, on the dates that fit the window."
-            sizeClass="text-[clamp(2.1rem,4.2vw,3.25rem)]"
-            line2ClassName="text-[clamp(1.25rem,2.5vw,1.85rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

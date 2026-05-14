@@ -20,14 +20,13 @@ export default function EventsOverview18() {
         animate={reduce ? undefined : { opacity: [0.3, 0.5, 0.35], scale: [1, 1.08, 1] }}
         transition={reduce ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative mx-auto w-full max-w-deck">
         <SectionLabel lines={["— EVENTS · OVERVIEW"]} />
         <div className="mt-8">
           <SplitTitle
             line1="Live events, same reader."
             line2="WhiskyFest anchors the room where discovery becomes purchase."
-            sizeClass="text-[clamp(2rem,4.2vw,3.25rem)]"
-            line2ClassName="text-[clamp(1.15rem,2.4vw,1.85rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

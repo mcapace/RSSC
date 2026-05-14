@@ -33,14 +33,13 @@ export default function PillarII08() {
         animate={reduce ? undefined : { opacity: [0.28, 0.48, 0.32], y: [0, 14, 0] }}
         transition={reduce ? undefined : { duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative z-[1] mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative z-[1] mx-auto w-full max-w-deck">
         <SectionLabel lines={["— PILLAR II"]} />
         <div className="mt-6">
           <SplitTitle
             line1="Rare Spirits, Rare Destinations."
             line2="A three-part sponsored content series, written for the reader who reads twice."
-            sizeClass="text-[clamp(2rem,4vw,3rem)]"
-            line2ClassName="text-[clamp(1.15rem,2.3vw,1.7rem)] italic text-gold"
+            line2ClassName="font-display font-medium italic text-gold"
           />
         </div>
 

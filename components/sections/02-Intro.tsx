@@ -29,14 +29,14 @@ export default function Intro02() {
 
   return (
     <SectionFrame index={1} id={meta.id} ariaLabel={meta.ariaLabel} className="bg-bg">
-      <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-12 md:py-20">
+      <div className="relative mx-auto w-full max-w-deck">
         <SectionLabel lines={["— THE BRIEF"]} />
         <div className="mt-8">
-          <SplitTitle line1="The Brief" sizeClass="text-[clamp(2.5rem,5vw,3.75rem)]" />
+          <SplitTitle line1="The Brief" />
         </div>
 
         <motion.p
-          className="mt-8 max-w-prose font-body text-xl leading-relaxed text-ivory/90"
+          className="mt-8 max-w-prose font-body text-lg leading-relaxed text-ivory/90 md:text-xl"
           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}

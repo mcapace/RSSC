@@ -19,15 +19,15 @@ export function StubSlide({ index }: Props) {
       index={index}
       id={meta.id}
       ariaLabel={meta.ariaLabel}
-      className="flex items-center justify-center bg-bg px-4 py-16 sm:px-6 sm:py-24"
+      className="flex items-center justify-center bg-bg"
     >
-      <div className="w-full max-w-4xl space-y-8">
+      <div className="w-full max-w-deck space-y-8">
         {meta.monoLabel ? <SectionLabel lines={[meta.monoLabel]} /> : null}
         {line1 ? (
           <SplitTitle
             line1={line1}
             line2={line2}
-            line2ClassName={line2 ? "text-[clamp(2rem,4vw,3.25rem)] italic text-gold" : undefined}
+            line2ClassName={line2 ? "font-display font-medium italic text-gold" : undefined}
           />
         ) : null}
       </div>
